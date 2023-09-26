@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import handleCSV from './handleCSV'
+import connectGPT from './connectGPT'
 
 
 const Quiz = () => {
@@ -29,6 +30,7 @@ const Quiz = () => {
         setData(result)
     };
     fetchData();
+    connectGPT().then(console.log('connected'))
   }, [])
     
   return (
