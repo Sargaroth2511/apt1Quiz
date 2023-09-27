@@ -1,15 +1,19 @@
 {
   "name": "apt1-project",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.5.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
+    "express": "^4.18.2",
     "fs": "^0.0.1-security",
-    "openai": "^4.10.0",
+    "nodemon": "^3.0.1",
+    "openai": "^4.0.0",
     "papaparse": "^5.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -18,6 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "start:backend": "nodemon server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

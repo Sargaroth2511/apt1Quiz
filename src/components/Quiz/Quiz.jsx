@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import handleCSV from './handleCSV'
 import connectGPT from './connectGPT'
+import axios from 'axios'
 
 
 const Quiz = () => {
@@ -8,6 +9,7 @@ const Quiz = () => {
   const [data, setData] = useState(false)
   const [showAnser, setShowAnser] = useState(false)
   const [cardIndex, setCardIndex] = useState(0)
+  const [gptData, setGptData] = useState(null)
 
   const showAnswer = () => {
     setShowAnser(!showAnser)
@@ -30,8 +32,25 @@ const Quiz = () => {
         setData(result)
     };
     fetchData();
-    connectGPT().then(console.log('connected'))
+
+    const options = {
+      method: 'POST',
+      url: 'http://localhost:5000/ask',
+      data: {
+        question: 'Aus welchen Zahlen besteht der Binärcode?', // Replace with the user's question
+      },
+    }
+    axios.request(options)
+    .then(function (response){
+      console.log(response.data.reply)
+      setGptData(response.data.data)
+    })
+    .catch(function (error){
+      console.error(error)
+    })
   }, [])
+
+  // console.log(gptData)
     
   return (
     <div>
