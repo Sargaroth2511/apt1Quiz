@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import handleCSV from './handleCSV'
 import connectGPT from './connectGPT'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 
 const Quiz = () => {
@@ -10,6 +11,7 @@ const Quiz = () => {
   const [showAnser, setShowAnser] = useState(false)
   const [cardIndex, setCardIndex] = useState(0)
   const [gptData, setGptData] = useState(null)
+  const navigate = useNavigate();
 
   const showAnswer = () => {
     setShowAnser(!showAnser)
@@ -75,6 +77,7 @@ const Quiz = () => {
             </div>
         )
       })}
+      <button onClick={()=>navigate('/')} >Zurück</button>
     </div>
   )
 }

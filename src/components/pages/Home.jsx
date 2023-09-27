@@ -1,10 +1,13 @@
 import React from 'react'
-import Quiz from '../Quiz/Quiz'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
+  const navigate = useNavigate()
+
   return (
     <div>
-      <Quiz />
+      <button onClick={()=>navigate('/Quiz')}>Quiz</button>
+      <button onClick={()=>navigate('/TestGPT')}>GPT Test</button>
     </div>
   )
 }
