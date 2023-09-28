@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/apt1Quiz/static/css/main.9414577b.css",
+    "main.js": "/apt1Quiz/static/js/main.dbfda2d6.js",
+    "index.html": "/apt1Quiz/index.html",
+    "main.9414577b.css.map": "/apt1Quiz/static/css/main.9414577b.css.map",
+    "main.dbfda2d6.js.map": "/apt1Quiz/static/js/main.dbfda2d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9414577b.css",
+    "static/js/main.dbfda2d6.js"
+  ]
+}
