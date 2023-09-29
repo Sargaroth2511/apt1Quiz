@@ -2,6 +2,7 @@
   "name": "apt1-project",
   "version": "0.1.0",
   "type": "module",
+  "homepage": "https://sargaroth2511.github.io/apt1Quiz/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -24,6 +25,8 @@
   },
   "scripts": {
     "start:backend": "nodemon server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,5 +49,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
