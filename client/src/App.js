@@ -5,10 +5,27 @@ import "./App.css";
 function App() {
   const [data, setData] = useState(null);
   const [question, setQuestion] = useState("");
+  const [sendQuestion, setSendQuestion] = useState(false);
+
+  const submitForm = e => {
+    e.preventDefault();
+    if (e.keyCode === 13) {
+      e.preventDefault();
+    }
+    // console.log(e.keyCode)
+    setSendQuestion(true);
+  };
+
+  const handleKeyPress = event => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      setSendQuestion(true);
+    }
+  };
 
   useEffect(() => {
-    setQuestion("Wer erfand den Buchdruck?");
-    if (question) {
+    // setQuestion("Wer erfand den Buchdruck?");
+    if (sendQuestion) {
       const apiUrl = `/api?question=${encodeURIComponent(question)}`;
 
       fetch(apiUrl)
@@ -18,32 +35,32 @@ function App() {
           setData(data.reply);
         });
     }
-  }, [question]);
-
-  // React.useEffect(() => {
-  //   fetch("/api")
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       console.log(data);
-  //       setData(data.message);
-  //     });
-  // }, []);
+  }, [question, sendQuestion]);
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <p>{!data ? "Loading..." : data}</p>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div>
+          <form onKeyDown={handleKeyPress} onSubmit={submitForm}>
+            <br />
+            <label htmlFor="searchField"></label>
+            <br />
+            <textarea
+              placeholder="Deine Frage an ChatGPT"
+              type="text"
+              name=""
+              id="searchField"
+              maxLength={500}
+              onChange={e => setQuestion(e.target.value)}
+              value={question}
+            />
+            <br />
+            <button type="submit">Senden</button>
+          </form>
+          <br />
+        </div>
+        <p>{!data ? "Loading..." : data}</p>
       </header>
     </div>
   );
