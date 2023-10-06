@@ -33,7 +33,7 @@ app.get("/api", (req, res) => {
           content:
             "You are a helpful assistant. You answer Questions precisely and in a short way.",
         },
-        { role: "user", content: "Wie hoch ist der Eiffelturm" },
+        { role: "user", content: "Wer gewann die erste Fußball WM?" },
       ],
     },
   };
