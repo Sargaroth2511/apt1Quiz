@@ -1,6 +1,7 @@
 const path = require("path");
 const express = require("express");
 const axios = require("axios");
+require("dotenv").config();
 
 const PORT = process.env.PORT || 3001;
 const apiKey = process.env.MY_OPENAI_KEY;
@@ -46,6 +47,7 @@ app.get("/api", (req, res) => {
     })
     .catch(function (error) {
       console.error("an error occured", error.response.data);
+      res.status(500).json({ error: "An error occurred on the server." });
     });
 });
 

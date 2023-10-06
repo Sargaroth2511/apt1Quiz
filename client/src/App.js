@@ -6,6 +6,8 @@ function App() {
   const [data, setData] = useState(null);
   const [question, setQuestion] = useState("");
   const [sendQuestion, setSendQuestion] = useState(false);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const submitForm = e => {
     e.preventDefault();
@@ -26,13 +28,28 @@ function App() {
   useEffect(() => {
     // setQuestion("Wer erfand den Buchdruck?");
     if (sendQuestion) {
+      setLoading(true);
       const apiUrl = `/api?question=${encodeURIComponent(question)}`;
 
       fetch(apiUrl)
-        .then(res => res.json())
+        .then(res => {
+          if (!res.ok) {
+            // Handle the error response here
+            setError(`Request failed with status ${res.status}`);
+            setLoading(false);
+            throw new Error(`Request failed with status ${res.status}`);
+          }
+          return res.json();
+        })
         .then(data => {
           setData(data.reply);
           setSendQuestion(false);
+          setLoading(false);
+        })
+        .catch(error => {
+          // Handle the error here
+          console.error("An error occurred:", error.message);
+          // You can set an error state or display an error message to the user
         });
     }
   }, [question, sendQuestion]);
@@ -60,7 +77,8 @@ function App() {
           </form>
           <br />
         </div>
-        <p>{!data ? "Loading..." : data}</p>
+        <p>{loading ? "Loading..." : data}</p>
+        {error ? <p>Irgendetwas ist schief gelaufen...</p> : ""}
       </header>
     </div>
   );
