@@ -31,8 +31,8 @@ function App() {
       fetch(apiUrl)
         .then(res => res.json())
         .then(data => {
-          console.log(data.reply);
           setData(data.reply);
+          setSendQuestion(false);
         });
     }
   }, [question, sendQuestion]);
