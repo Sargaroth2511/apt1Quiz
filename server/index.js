@@ -15,7 +15,7 @@ app.use(express.static(path.resolve(__dirname, "../client/build")));
 // });
 
 app.get("/api", (req, res) => {
-  // const userQuestion = req.body.question;
+  const userQuestion = req.query.question;
 
   const options = {
     method: "POST",
@@ -33,7 +33,7 @@ app.get("/api", (req, res) => {
           content:
             "You are a helpful assistant. You answer Questions precisely and in a short way.",
         },
-        { role: "user", content: "Wer gewann die erste Fußball WM?" },
+        { role: "user", content: userQuestion },
       ],
     },
   };
