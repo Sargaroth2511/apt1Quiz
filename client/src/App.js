@@ -1,18 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
-  const [data, setData] = React.useState(null);
+  const [data, setData] = useState(null);
+  const [question, setQuestion] = useState("");
 
   useEffect(() => {
-    fetch("/api")
-      .then(res => res.json())
-      .then(data => {
-        console.log(data.reply);
-        setData(data.reply);
-      });
-  }, []);
+    setQuestion("Wer erfand den Buchdruck?");
+    if (question) {
+      const apiUrl = `/api?question=${encodeURIComponent(question)}`;
+
+      fetch(apiUrl)
+        .then(res => res.json())
+        .then(data => {
+          console.log(data.reply);
+          setData(data.reply);
+        });
+    }
+  }, [question]);
 
   // React.useEffect(() => {
   //   fetch("/api")
