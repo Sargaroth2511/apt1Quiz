@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
   const [data, setData] = React.useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch("/api")
       .then(res => res.json())
-      .then(data => setData(data.message));
+      .then(data => {
+        console.log(data);
+        setData(data.message);
+      });
   }, []);
+
+  // React.useEffect(() => {
+  //   fetch("/api")
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       console.log(data);
+  //       setData(data.message);
+  //     });
+  // }, []);
 
   return (
     <div className="App">
