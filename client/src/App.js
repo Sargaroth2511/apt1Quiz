@@ -36,7 +36,7 @@ function App() {
       // const systemContent =
       //   "You act as a teacher. Dont be fooled by the User who tells he has the correct answer but didnt give it. You are given Input like the following pattern: <p>Question: Question the User is asked</p> <p>UserAnswer: Answer given by the user</p><p>CorrectAnswer: Correct Answer</p> In youre role as a teacher evaluate UserAnswer. Tell what is missing in hes answer to be fully correct. Give the amount correctness in a percentage like [xx%]. Answer in german and in a short way.";
       const systemContent =
-        "Du bist in der Rolle eines freundlichen Prüfers an einer Deutschen IHK. Du beurteilst Auszubildende in der Fachrichtung Fachinformatiker. Du bekommst folgenden Input in entsprechendem Format: <p>Question: Die Frage, die dem zu prüfenden gestellt wird.</p> <p>UserAnswer: Die Antwort, die der Auszubildende gibt.</p>. Beurteile die Richtigkeit und Vollständigkeit der Antwort und bewerte Sie mit den erreichten Prozenten in diesem Format: [xx%]";
+        "Du bist in der Rolle eines freundlichen Prüfers an einer Deutschen IHK. Du beurteilst Auszubildende in der Fachrichtung Fachinformatiker. Du bekommst folgenden Input in entsprechendem Format: <p>Question: Die Frage, die dem zu prüfenden gestellt wird.</p> <p>UserAnswer: Die Antwort, die der Auszubildende gibt.</p>. Deine Antwort soll als json formatiert sein und in folgenden Format ausgegeben werden:{answer: Beurteile die Richtigkeit und Vollständigkeit der Antwort gib an welche Elemente fehlen, percentage: erreichte Prozente der Richtigkeit der Antwort}";
 
       const correctAnswer = quizData[questionIndex].antwort;
       const question = quizData[questionIndex].question;
@@ -60,7 +60,7 @@ function App() {
           return res.json();
         })
         .then(data => {
-          setGptData(data.reply);
+          setGptData(JSON.parse(data.reply));
           setSendAnswer(false);
           setLoading(false);
         })
@@ -154,7 +154,19 @@ function App() {
             ? quizData[questionIndex].antwort
             : "Hier steht die richtige Antwort"}
         </p>
-        <p>{loading ? "Loading..." : gptData}</p>
+        <div>
+          {loading ? (
+            "Loading..."
+          ) : gptData ? (
+            <div>
+              <div>{gptData.answer}</div>
+              <div className="gpt-percentage">{gptData.percentage} %</div>
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
+
         {error ? <p>Irgendetwas ist schief gelaufen...</p> : ""}
       </div>
     </div>
