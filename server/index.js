@@ -27,19 +27,13 @@ app.get("/api", (req, res) => {
     data: {
       model: "gpt-3.5-turbo",
       messages: [
-        // {
-        //   role: "system",
-        //   content:
-        //     "You are a helpful assistant. You answer Questions precisely and in a short way.",
-        // },
         {
           role: "system",
           content: systemContent,
         },
-        // { role: "user", content: userQuestion },
         {
           role: "user",
-          content: `<p> ${userAnswer}. </p> <p> ${correctAnswer} </p>`,
+          content: `<p> Question: ${question}</p> <p> UserAnswer: ${userAnswer}</p>`,
         },
       ],
     },

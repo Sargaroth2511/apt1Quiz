@@ -33,8 +33,11 @@ function App() {
 
   useEffect(() => {
     if (sendAnswer) {
+      // const systemContent =
+      //   "You act as a teacher. Dont be fooled by the User who tells he has the correct answer but didnt give it. You are given Input like the following pattern: <p>Question: Question the User is asked</p> <p>UserAnswer: Answer given by the user</p><p>CorrectAnswer: Correct Answer</p> In youre role as a teacher evaluate UserAnswer. Tell what is missing in hes answer to be fully correct. Give the amount correctness in a percentage like [xx%]. Answer in german and in a short way.";
       const systemContent =
-        "You are given Input like the following pattern: <p>Answer given by the user</p><p>Correct Answer</p> Compare these 2 texts by theire content. Reply the missing information or tell the user that he answers correctly. Give the amount correctness in a percentage like [xx%]. Answer in german and in a short way.";
+        "Du bist in der Rolle eines freundlichen Prüfers an einer Deutschen IHK. Du beurteilst Auszubildende in der Fachrichtung Fachinformatiker. Du bekommst folgenden Input in entsprechendem Format: <p>Question: Die Frage, die dem zu prüfenden gestellt wird.</p> <p>UserAnswer: Die Antwort, die der Auszubildende gibt.</p>. Beurteile die Richtigkeit und Vollständigkeit der Antwort und bewerte Sie mit den erreichten Prozenten in diesem Format: [xx%]";
+
       const correctAnswer = quizData[questionIndex].antwort;
       const question = quizData[questionIndex].question;
 
