@@ -148,13 +148,15 @@ function App() {
         </form>
         <br />
       </div>
-      <p>
-        {quizData && showCorrectAnswer
-          ? quizData[questionIndex].antwort
-          : "Hier steht die richtige Antwort"}
-      </p>
-      <p>{loading ? "Loading..." : gptData}</p>
-      {error ? <p>Irgendetwas ist schief gelaufen...</p> : ""}
+      <div>
+        <p>
+          {quizData && showCorrectAnswer
+            ? quizData[questionIndex].antwort
+            : "Hier steht die richtige Antwort"}
+        </p>
+        <p>{loading ? "Loading..." : gptData}</p>
+        {error ? <p>Irgendetwas ist schief gelaufen...</p> : ""}
+      </div>
     </div>
   );
 }
