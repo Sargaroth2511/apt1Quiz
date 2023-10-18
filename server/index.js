@@ -8,15 +8,15 @@ const PORT = process.env.PORT || 3001;
 const apiKey = process.env.MY_OPENAI_KEY;
 
 const app = express();
+app.use(express.json());
 
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
-app.get("/api", (req, res) => {
-  const userAnswer = req.query.userAnswer;
-  const systemContent = req.query.content;
-  const correctAnswer = req.query.correctAnswer;
-  const question = req.query.question;
+app.post("/api", (req, res) => {
+  console.log(req.body);
+  const { userAnswer, systemContent, correctAnswer, question, advices } =
+    req.body;
 
   const options = {
     method: "POST",
@@ -25,7 +25,7 @@ app.get("/api", (req, res) => {
       Authorization: `Bearer ${apiKey}`,
     },
     data: {
-      model: "gpt-3.5-turbo",
+      model: "gpt-4",
       messages: [
         {
           role: "system",
@@ -33,7 +33,7 @@ app.get("/api", (req, res) => {
         },
         {
           role: "user",
-          content: `<p> Question: ${question}</p> <p> UserAnswer: ${userAnswer}</p>`,
+          content: `"""1. ${question}""", """2 ${correctAnswer}""", """3. ${userAnswer}""", `,
         },
       ],
     },
