@@ -1,9 +1,15 @@
+.appContainer{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
 .App {
   box-sizing: border-box;
   position: relative;
   text-align: center;
   background-color: #282c34;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,6 +24,7 @@
   margin-top: 10px;
   margin-left: 10px;
   position: absolute;
+  z-index: 2;
 }
 .App-logo {
   height: 15vmin;
@@ -61,4 +68,49 @@ form{
   margin-top: 5px;
   font-size: 1.5rem;
   color: aqua;
+}
+
+.authPopup{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: #fefefe52;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
+}
+
+.auth-form{
+  width: 50%;
+  max-width: 400px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aliceblue;
+  box-shadow: 1px 3px 7px 0px #000000;
+  border-radius: 5px;
+}
+
+.auth-form input{
+  display: block;
+}
+
+.color-red{
+  color: red;
+}
+
+.color-green{
+  color: green;
+}
+
+button{
+  cursor: pointer;
+}
+
+#closeButton{
+  margin: 5px;
+  align-self: end;
 }

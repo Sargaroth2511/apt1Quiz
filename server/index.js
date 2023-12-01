@@ -3,6 +3,10 @@ const express = require("express");
 const axios = require("axios");
 require("dotenv").config();
 const fs = require("fs");
+const connectFirebase = require("./connectFirebase");
+
+// const firebase = require("firebase");
+// const firebaseui = require("firebaseui");
 
 const PORT = process.env.PORT || 3001;
 const apiKey = process.env.MY_OPENAI_KEY;
@@ -14,7 +18,15 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.post("/api", (req, res) => {
-  console.log(req.body);
+  // connectFirebase()
+  //   .then(result => console.log(result))
+  //   .catch(err => console.log(err));
+  // console.log(firebase);
+  // const ui = new firebaseui.auth.AuthUI(firebase.auth());
+  // ui.start("#firebaseui-auth-container", {
+  //   signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
+  //   // Other config options...
+  // });
   const { userAnswer, systemContent, correctAnswer, question, advices } =
     req.body;
 

@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+// import { getAuth, onAuthStateChanged } from "firebase/auth";
+import logo from "./logo.png";
 import "./App.css";
+import fetchGPTData from "./components/apiCalls/fetchGPTData";
+// import initializeFirebase from "./components/firebase/initializeFirebase";
+import authListener from "./components/firebase/authListener";
+import logOut from "./components/firebase/logOut";
+// import SignInWithEmail from "./components/firebase/SignInWithEmail";
+import SignInPopup from "./components/SignInPopup";
+import logIn from "./components/firebase/logIn";
+import CreateUserPopup from "./components/CreateUserPopup";
 
 function App() {
   const [gptData, setGptData] = useState(null);
@@ -11,6 +20,13 @@ function App() {
   const [quizData, setQuizdata] = useState(null);
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
+  const [signIn, setSignIn] = useState(null);
+  const [showCreateUserPopup, setShowCreateUserPopup] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    authListener(setCurrentUser);
+  }, []);
 
   let questionNumber = "10";
 
@@ -32,63 +48,26 @@ function App() {
   };
 
   useEffect(() => {
-    if (sendAnswer) {
-      // const systemContent =
-      //   " Du bist in der Rolle eines unfreundlichen und sarkastischen Prüfers an einer Deutschen IHK (ähnlich eins Lehrers). Du beurteilst Auszubildende in der Fachrichtung Fachinformatiker. Bei der Beurteilung bist du nicht zu streng. Wenn nach Gründen gefragt wird und nichts anderes der Frage zu entnehmen ist reicht ein Grund. Kurze Antworten sollen wohlwollend beantwortet werden. Sollte nicht nach einer Begründung gefragt werden, muss diese auch nicht geliefert werden. Sollte der Nutzer keine Antwort angeben oder angeben, dass er die Antwort nicht weiß, nenne ihm zusätzlich zu der Bewertung auch deine Antwort. Die Antwort ist in diesem Falle allerdings immer falsch und mit 0% zu bewerten. Deine Antwort soll als json formatiert sein und in folgenden Format ausgegeben werden:{answer: Beurteile die Richtigkeit und Vollständigkeit der Antwort (userAnswer) in Bezug auf die Frage (question). Gib an welche Elemente fehlen damit 100 % erreicht werden, percentage: erreichte Prozente der Richtigkeit der Antwort, GPTAnswer: deine Antwort auf 'question' aus dem json input}";
-      const systemContent =
-        'Du bist in der Rolle eines unfreundlichen und sarkastischen Prüfers an einer Deutschen IHK (ähnlich eins Lehrers). Du beurteilst Auszubildende in der Fachrichtung Fachinformatiker. Bei der Beurteilung bist du nicht zu streng. Wenn nach Gründen gefragt wird und nichts anderes der Frage zu entnehmen ist reicht ein Grund. Kurze Antworten sollen wohlwollend beantwortet werden. Sollte nicht nach einer Begründung gefragt werden, muss diese auch nicht geliefert werden. Sollte der Nutzer keine Antwort angeben oder angeben, dass er die Antwort nicht weiß, nenne ihm zusätzlich zu der Bewertung auch deine Antwort. Die Antwort ist in diesem Falle allerdings immer falsch und mit 0% zu bewerten. Dein Input hat folgendes Format und als delimiter wird """ genutzt. """1. Frage an den Auszubildenden""", """2. Vorgefertigte Antwort""", """3. Antwort des Auszubildenden""" Format the answer as JSON like: {"anwer": "Gehe in folgenden Schritten vor: 1. Beantworte selbst die Frage, die dem Auszubildenden gestellt wird ("""1. Frage an den Auszubildenden"""). 2. Analysiere eine vorgefertigte Antwort auf die in 1 gestellte Frage ("""2. Vorgefertigte Antwort"""). 3. Analysiere die Antwort des Auszubildenden ("""3. Antwort des Auszubildenden"""). 4. Vergleiche die Antwort aus Schritt 3 mit der Frage aus Schritt 1, deiner Antwort dazu und der Antwort aus Schritt 2. Schritte 1 - 4 sollen als innerer Monolog durchgeführt werden 5. Beurteile  die Antwort in deiner anfangs definierten Rolle.", "percentage": "amount of correctness of Antwort des Auszubildenden in percentage", "GPTAnswer": "your answer to Frage an den Auszubildenden"} ';
-
+    if (sendAnswer && currentUser) {
+      setLoading(true);
       const correctAnswer = quizData[questionIndex].antwort;
       const question = quizData[questionIndex].frage;
-      const advices =
-        "Gebe folgendes Format aus: Output als json {answer: dein Ergebnis aus Schritt 4. Gib auch an welche Elemente fehlen damit 100 % erreicht werden, percentage: erreichte Prozente der Richtigkeit der Antwort, GPTAnswer: deine Antwort aus Schritt 1}";
 
-      setLoading(true);
-      // const backendUrl = `/api?userAnswer=${encodeURIComponent(
-      //   userAnswer
-      // )}&correctAnswer=${encodeURIComponent(
-      //   correctAnswer
-      // )}&question=${encodeURIComponent(question)}&content=${encodeURIComponent(
-      //   systemContent
-      // )}`;
-
-      const backendUrl = "/api";
-
-      const requestData = {
-        userAnswer: userAnswer,
-        correctAnswer: correctAnswer,
-        question: question,
-        systemContent: systemContent,
-        advices: advices,
+      const fetchData = async () => {
+        const data = await fetchGPTData(correctAnswer, question, userAnswer);
+        return data;
       };
-
-      fetch(backendUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(requestData),
-      })
-        .then(res => {
-          if (!res.ok) {
-            setError(`Request failed with status ${res.status}`);
-            setLoading(false);
-            throw new Error(`Request failed with status ${res.status}`);
-          }
-          return res.json();
-        })
+      fetchData()
         .then(data => {
-          console.log(data);
-          setGptData(JSON.parse(data.reply));
-          setSendAnswer(false);
+          setGptData(data);
           setLoading(false);
         })
-        .catch(error => {
-          console.error("An error occurred:", error, error.message);
-          setError(error.message);
-        });
+        .catch(err => setError(err));
+    } else if (sendAnswer && !currentUser) {
+      alert("Du muss eingeloggt sein um die Funktion nutzen zu können");
+      setSendAnswer(false);
     }
-  }, [userAnswer, sendAnswer]);
+  }, [sendAnswer, currentUser]);
 
   useEffect(() => {
     const learningField = "LF1";
@@ -105,7 +84,6 @@ function App() {
         return res.json();
       })
       .then(data => {
-        console.log(data);
         setQuizdata(data);
       })
       .catch(error => {
@@ -116,6 +94,7 @@ function App() {
 
   useEffect(() => {
     setUserAnswer("");
+    setSendAnswer(false);
     setShowCorrectAnswer(false);
     setGptData(null);
   }, [questionIndex]);
@@ -128,78 +107,102 @@ function App() {
       e.currentTarget.id === "nextButton"
     ) {
       setQuestionIndex(questionIndex => (questionIndex += 1));
-      console.log(questionIndex);
     }
   };
 
   return (
-    <div className="App">
+    <div className="appContainer">
+      {showCreateUserPopup ? (
+        <CreateUserPopup
+          setShowCreateUserPopup={setShowCreateUserPopup}
+          setError={setError}
+        />
+      ) : (
+        ""
+      )}
+      {!currentUser && signIn ? (
+        <SignInPopup
+          setError={setError}
+          setShowCreateUserPopup={setShowCreateUserPopup}
+          setSignIn={setSignIn}
+        />
+      ) : (
+        ""
+      )}
       <div className="logo-container">
         <img src={logo} className="App-logo" alt="logo" />
       </div>
-      <div>
-        <button id="prevButton" onClick={changeQuestionIndex}>
-          Vorherige Frage
-        </button>
-        <button id="nextButton" onClick={changeQuestionIndex}>
-          Nächste Frage
-        </button>
-        <h2> {quizData ? quizData[questionIndex].LF : "Lernfeld"}</h2>
-        <p>Frage Nummer {questionIndex + 1}</p>
-        <p>
-          {quizData
-            ? quizData[questionIndex].frage
-            : "Hier soll die Frage stehen..."}
-        </p>
-        <form onKeyDown={handleKeyPress} onSubmit={submitForm}>
-          <label htmlFor="answerField"></label>
-          <br />
-          <textarea
-            placeholder="Deine Antwort..."
-            type="text"
-            name=""
-            id="anwserField"
-            maxLength={500}
-            onChange={e => setUserAnswer(e.target.value)}
-            value={userAnswer}
-          />
-          <br />
-          <button type="submit">Senden</button>
-        </form>
-        <br />
-      </div>
-      <div>
+      <div className="App">
         <div>
-          {quizData && showCorrectAnswer ? (
-            <div>
-              <h3>Antwort aus der Datenbank</h3>
-              <p>{quizData[questionIndex].antwort}</p>
-            </div>
-          ) : (
-            "Hier steht die richtige Antwort"
-          )}
+          <button onClick={() => logIn(currentUser, setSignIn)}>
+            Einloggen
+          </button>
+          <button onClick={() => logOut(setSignIn, setError)}>Ausloggen</button>
         </div>
         <div>
-          {loading ? (
-            "Loading..."
-          ) : gptData ? (
-            <div>
-              <div>
-                <h3>Beurteilung der Antwort durch ChatGPT</h3>
-                <p>{gptData.answer}</p>
-              </div>
-              <div className="gpt-percentage">{gptData.percentage}</div>
-              <div>
-                <h3>Lösung von ChatGPT</h3>
-                <p>{gptData.GPTAnswer}</p>
-              </div>
-            </div>
-          ) : (
-            ""
-          )}
-        </div>
+          <button id="prevButton" onClick={changeQuestionIndex}>
+            Vorherige Frage
+          </button>
+          <button id="nextButton" onClick={changeQuestionIndex}>
+            Nächste Frage
+          </button>
 
-        {error ? <p>Irgendetwas ist schief gelaufen...</p> : ""}
+          <h2> {quizData ? quizData[questionIndex].LF : "Lernfeld"}</h2>
+          <p>Frage Nummer {questionIndex + 1}</p>
+          <p>
+            {quizData
+              ? quizData[questionIndex].frage
+              : "Hier soll die Frage stehen..."}
+          </p>
+          <form onKeyDown={handleKeyPress} onSubmit={submitForm}>
+            <label htmlFor="answerField"></label>
+            <br />
+            <textarea
+              placeholder="Deine Antwort..."
+              type="text"
+              name=""
+              id="anwserField"
+              maxLength={500}
+              onChange={e => setUserAnswer(e.target.value)}
+              value={userAnswer}
+            />
+            <br />
+            <button type="submit">Senden</button>
+          </form>
+          <br />
+        </div>
+        <div>
+          <div>
+            {quizData && sendAnswer && currentUser ? (
+              <div>
+                <h3>Antwort aus der Datenbank</h3>
+                <p>{quizData[questionIndex].antwort}</p>
+              </div>
+            ) : (
+              "Hier steht die richtige Antwort"
+            )}
+          </div>
+          <div>
+            {loading ? (
+              "Loading..."
+            ) : gptData ? (
+              <div>
+                <div>
+                  <h3>Beurteilung der Antwort durch ChatGPT</h3>
+                  <p>{gptData.answer}</p>
+                </div>
+                <div className="gpt-percentage">{gptData.percentage} %</div>
+                <div>
+                  <h3>Lösung von ChatGPT</h3>
+                  <p>{gptData.GPTAnswer}</p>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+          {error ? <p>Irgendetwas ist schief gelaufen...</p> : ""}
+        </div>
       </div>
     </div>
   );
