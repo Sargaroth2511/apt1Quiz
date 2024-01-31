@@ -1,13 +1,3 @@
-// import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-// import {
-//   getAuth,
-//   createUserWithEmailAndPassword,
-//   signInWithEmailAndPassword,
-//   onAuthStateChanged,
-// } from "firebase/auth";
-// import "firebase/firestore";
-
 const { initializeApp } = require("firebase/app");
 const {
   getAuth,
@@ -34,8 +24,6 @@ const connectFirebase = (email = "johabei@gmx.de", password = "test234") => {
   return new Promise((res, rej) => {
     onAuthStateChanged(auth, user => {
       if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/auth.user
         const uid = user.uid;
         // console.log(uid);
         res({ uid: uid });
