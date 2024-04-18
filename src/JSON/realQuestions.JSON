@@ -1,0 +1,599 @@
+{
+    "aufgaben": [
+      {
+        "fragestellung": "Vervollständigen Sie die Tabelle mit jeweils einem Vorteil für Zero Clients und Thin Clients im Kontext einer VDI-Umgebung.",
+        "musterantwort": {
+          "Zero Client": "Weniger Wartungsaufwand, da keine lokale Speicherung oder Betriebssystemupdates benötigt werden.",
+          "Thin Client": "Geringere Kosten im Vergleich zu herkömmlichen PCs durch einfache Hardware und geringeren Energieverbrauch."
+        },
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Nennen Sie zwei Maßnahmen, um einen VDI Client in der Bibliothek vor Diebstahl zu schützen.",
+        "musterantwort": [
+          "Sicherung mit Kabelschlössern an den Arbeitsplätzen.",
+          "Einsatz von Überwachungskameras und Zugangskontrollsystemen in den Räumlichkeiten."
+        ],
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Erklären Sie den Grund für einen Boot Storm anhand der Grafik zum typischen Lastverhalten einer VDI-Umgebung über den Tag.",
+        "musterantwort": "Ein Boot Storm tritt auf, wenn viele Benutzer gleichzeitig versuchen, ihre virtuellen Desktops zu starten, typischerweise zu Beginn des Arbeitstages. Dies führt zu einer hohen Last auf den VDI-Servern und kann Verzögerungen oder Leistungsprobleme verursachen.",
+        "punkte": 1
+      },
+      {
+        "fragestellung": "Nennen Sie zwei Maßnahmen, um einen Boot Storm auf dem VDI-Server zu bewältigen.",
+        "musterantwort": [
+          "Einsatz von Load Balancing, um die Last gleichmäßig auf mehrere Server zu verteilen.",
+          "Vorkonfiguration und Pre-Booting von virtuellen Desktops außerhalb der Spitzenzeiten."
+        ],
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Erläutern Sie die Funktion einer GPU in einer VDI-Umgebung.",
+        "musterantwort": "Eine GPU (Graphics Processing Unit) ist eine spezialisierte Prozessoreinheit, die für komplexe Berechnungen in Bezug auf Grafiken und Bildverarbeitung ausgelegt ist. In einer VDI-Umgebung können GPUs zur Beschleunigung grafikintensiver Anwendungen und zur Verbesserung der Benutzererfahrung durch flüssigere und reaktionsfähigere grafische Darstellungen eingesetzt werden.",
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Schreiben Sie das Akronym 'IaaS' aus und erläutern Sie dieses.",
+        "musterantwort": {
+          "IaaS": "Infrastructure as a Service. Dabei handelt es sich um eine Cloud-Computing-Angebotsform, bei der die Infrastruktur wie Server, Netzwerkkomponenten und Speicherplatz als Dienst über das Internet zur Verfügung gestellt wird."
+        },
+        "punkte": 1
+      },
+      {
+        "fragestellung": "Schreiben Sie das Akronym 'SaaS' aus und erläutern Sie dieses.",
+        "musterantwort": {
+          "SaaS": "Software as a Service. Dies bezeichnet eine Cloud-Computing-Dienstleistung, bei der Softwareanwendungen über das Internet zur Verfügung gestellt werden, typischerweise auf Abonnementbasis."
+        },
+        "punkte": 1
+      },
+      {
+        "fragestellung": "Schreiben Sie das Akronym 'PaaS' aus und erläutern Sie dieses.",
+        "musterantwort": {
+          "PaaS": "Platform as a Service. Es handelt sich um eine Dienstleistungsform im Cloud-Computing, die Nutzern eine Plattform bietet, um ohne die Komplexität der Hardware und Softwareinfrastruktur eigene Anwendungen zu entwickeln, zu betreiben und zu verwalten."
+        },
+        "punkte": 1
+      },
+      {
+        "fragestellung": "Nennen Sie drei allgemeine Vorteile für die Nutzung von internetgestützten Cloud-Diensten.",
+        "musterantwort": [
+          "Skalierbarkeit: Ressourcen können je nach Bedarf dynamisch angepasst werden.",
+          "Kosteneffizienz: Zahlung erfolgt nur für tatsächlich genutzte Ressourcen, was die Gesamtkosten senkt.",
+          "Zugänglichkeit: Von überall und jederzeit Zugriff auf Daten und Anwendungen über das Internet."
+        ],
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Nennen Sie zwei allgemeine Nachteile für die Nutzung von internetgestützten Cloud-Diensten.",
+        "musterantwort": [
+          "Abhängigkeit von der Internetverbindung: Ohne eine stabile Verbindung sind Cloud-Dienste möglicherweise nicht erreichbar.",
+          "Datenschutzbedenken: Sensible Daten werden außerhalb der eigenen Kontrolle gespeichert, was zu Sicherheitsbedenken führen kann."
+        ],
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Nennen Sie zwei mögliche Gefährdungen bei der Nutzung der Cloud für das tägliche Backup.",
+        "musterantwort": [
+          "Datenverlust: Durch technische Störungen oder Sicherheitslücken könnten gespeicherte Daten verloren gehen.",
+          "Unautorisierte Zugriffe: Ohne ausreichende Sicherheitsmaßnahmen könnten Dritte Zugang zu sensiblen Daten erhalten."
+        ],
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Nennen Sie zwei Vorteile für die On-Premises-Speicherung als Backup.",
+        "musterantwort": [
+          "Vollständige Kontrolle: Die Daten liegen physisch vor Ort, was eine größere Kontrolle über die Sicherheitsmaßnahmen ermöglicht.",
+          "Schnellerer Datenzugriff: Lokal gespeicherte Daten können schneller abgerufen werden, da keine Internetverbindung benötigt wird."
+        ],
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Berechnen Sie die Backupzeit für die Sicherung mit dem Tape-Laufwerk, und runden Sie Ihr Ergebnis auf volle Minuten. Die Sicherungsgröße beträgt 336,9 GByte, und die mittlere Schreibgeschwindigkeit des Tape-Laufwerks LTO 9 ist 250 MByte/s.",
+        "musterantwort": "Die genaue Berechnungsformel und das Ergebnis sind abhängig von den gegebenen Werten und der Umrechnung von GByte in MByte sowie von Sekunden in Minuten. Die Musterlösung wird einen Rechenweg beinhalten, der zuerst die Gesamtgröße in MByte umrechnet und dann durch die Schreibgeschwindigkeit teilt, um die Zeit in Sekunden zu erhalten, welche anschließend in Minuten umgerechnet und kaufmännisch gerundet wird.",
+        "punkte": 5
+      },
+      {
+        "fragestellung": "Berechnen Sie die Backupzeit in Minuten für die Sicherung mit der Cloud-Lösung, gegeben dass die exklusive Internetverbindung eine Netto-Upload-Geschwindigkeit von 250 MBit/s hat und die zu sichernde Speichergröße 336,9 GByte beträgt.",
+        "musterantwort": "Die Berechnung sollte die Umrechnung von GByte in MBit berücksichtigen, um die Datenmenge korrekt im Verhältnis zur Upload-Geschwindigkeit zu setzen. Anschließend wird die Zeit in Sekunden berechnet, die erforderlich ist, um diese Datenmenge hochzuladen, und schlussendlich in Minuten umgewandelt und kaufmännisch gerundet.",
+        "punkte": 5
+      },
+      {
+        "fragestellung": "Erläutern Sie zwei sicherheitsrelevante Anforderungen, die der Cloud-Anbieter für die Datenbank erfüllen muss.",
+        "musterantwort": [
+          "Datenverschlüsselung: Sowohl bei der Übertragung als auch bei der Speicherung müssen die Daten verschlüsselt sein, um unbefugten Zugriff zu verhindern.",
+          "Zugriffskontrollen: Implementierung von starken Authentifizierungs- und Autorisierungsverfahren, um sicherzustellen, dass nur berechtigte Benutzer Zugang zu den Daten haben."
+        ],
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Nennen Sie zwei Maßnahmen zur Verbesserung der Sicherheit beim Zugang zur Cloud-basierten Datenbank, stärker als nur durch ein Passwort.",
+        "musterantwort": [
+          "Zwei-Faktor-Authentifizierung (2FA): Eine zusätzliche Sicherheitsebene, bei der Benutzer neben dem Passwort noch einen weiteren Authentifizierungsfaktor bereitstellen müssen.",
+          "Biometrische Verfahren: Einsatz von Fingerabdruck-, Gesichtserkennung oder anderen biometrischen Methoden als Teil des Authentifizierungsprozesses."
+        ],
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie den Begriff 'personenbezogene Daten' gemäß § 2 DSGVO und nennen Sie drei Beispiele für personenbezogene Daten, die für die Bibliothek relevant sind.",
+        "musterantwort": {
+          "Definition": "Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen.",
+          "Beispiele": [
+            "Namen der Bibliotheksbenutzer",
+            "Adresse und Kontaktinformationen",
+            "Ausleihhistorie und Benutzernummern"
+          ]
+        },
+        "punkte": 5
+      },
+      {
+        "fragestellung": "Nennen Sie eine Maßnahme, wie die Pflicht zur Einwilligung bei der Kontoeröffnung in der Bibliothek vor Ort umgesetzt werden kann.",
+        "musterantwort": "Durch das Unterschreiben eines Einwilligungsformulars, auf dem die Datenschutzbestimmungen klar dargelegt sind und das der Benutzer bei der Kontoeröffnung akzeptieren muss.",
+        "punkte": 1
+      },
+      {
+        "fragestellung": "Nennen Sie eine Maßnahme, wie die Pflicht zur Einwilligung bei der Kontoeröffnung online in der Bibliothek umgesetzt werden kann.",
+        "musterantwort": "Einwilligungsklausel auf der Webseite: Ein Checkbox-Feld, das vor der Kontoeröffnung angeklickt werden muss, um zu bestätigen, dass der Benutzer die Datenschutzbedingungen gelesen hat und ihnen zustimmt.",
+        "punkte": 1
+      },
+      {
+        "fragestellung": "Nennen Sie exemplarisch drei notwendige Bestandteile einer Einwilligungserklärung.",
+        "musterantwort": [
+          "Information über den Zweck der Datenerhebung",
+          "Auflistung der konkret erhobenen Daten",
+          "Hinweise zum Widerrufsrecht des Nutzers"
+        ],
+        "punkte": 3
+      },
+      {
+        "fragestellung": "Benennen Sie die Dateiberechtigungen des Eigentümers (Nutzer 'desk1' bzw. 'desk2'), der Gruppe ('desk') und aller anderen Nutzer für die oben dargestellten Dateien.",
+        "musterantwort": {
+          "Eigentümer": "Lesen, Schreiben, Ausführen (rwx)",
+          "Gruppe": "Lesen, Ausführen (rx)",
+          "Alle anderen Nutzer": "Keine Rechte"
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Ergänzen Sie den Befehl mit den entsprechenden Berechtigungen in Oktalschreibweise, um die Rechte für den Ordner mit den Datensätzen der Studenten einzuschränken. Die Rechte für die Gruppe 'desk' und die einzelnen Nutzer 'desk1' und 'desk2' sollen beibehalten werden, alle anderen Nutzer sollen die Dateien mit den Daten der Studenten nicht mehr lesen und ausführen können.",
+        "musterantwort": "chmod 750 -R /bib/Studierende",
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie, welches der drei Schutzziele mit der Einschränkung der Dateiberechtigungen (siehe Aufgabe c) umgesetzt wird.",
+        "musterantwort": "Die Einschränkung der Dateiberechtigungen zielt auf die Wahrung der Vertraulichkeit ab, indem sichergestellt wird, dass nur autorisierte Personen Zugriff auf die Daten haben.",
+        "punkte": 3
+      },
+      {
+        "fragestellung": "Nennen Sie jeweils eine Maßnahme für die beiden anderen Schutzziele der Datensicherheit.",
+        "musterantwort": {
+          "Integrität": "Regelmäßige Backups und Verwendung von Hash-Funktionen zur Überprüfung der Unverändertheit von Daten.",
+          "Verfügbarkeit": "Einsatz von redundanter Hardware und Failover-Clustering, um Ausfallzeiten zu minimieren."
+        },
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie den Unterschied zwischen Zutrittskontrolle und Zugangskontrolle.",
+        "musterantwort": {
+          "Zutrittskontrolle": "Maßnahmen, die physisch verhindern, dass unbefugte Personen in bestimmte Bereiche gelangen, z.B. durch Sicherheitstüren oder Schranken.",
+          "Zugangskontrolle": "Maßnahmen, die den Zugang zu digitalen Ressourcen regeln, z.B. durch Passwörter oder digitale Zertifikate."
+        },
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Nennen Sie je zwei Beispiele für Maßnahmen der Zutrittskontrolle und der Zugangskontrolle.",
+        "musterantwort": {
+          "Zutrittskontrolle": [
+            "Elektronische Schließsysteme",
+            "Biometrische Verfahren wie Fingerabdruckscanner"
+          ],
+          "Zugangskontrolle": [
+            "Passwortgeschützte Benutzerkonten",
+            "Zwei-Faktor-Authentifizierung"
+          ]
+        },
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Beschreiben Sie drei Aspekte, die für eine Bereitstellung von Anwendungen in Form von SaaS sprechen.",
+        "musterantwort": [
+          "Reduzierte Kosten für die Wartung und das Management der Software, da der Anbieter diese Aufgaben übernimmt.",
+          "Einfache Skalierbarkeit und Anpassung an den Bedarf, ohne lokale Infrastruktur erweitern zu müssen.",
+          "Zugriff von überall und von verschiedenen Geräten aus, was Flexibilität und Mobilität fördert."
+        ],
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Erläutern Sie zwei Sachverhalte, die beim Aufbau des Server-Clusters zu beachten sind.",
+        "musterantwort": [
+          "Die Notwendigkeit einer ausreichenden Netzwerkbandbreite und -konfiguration, um die Kommunikation zwischen den Servern im Cluster effizient zu gestalten.",
+          "Die Implementierung von Failover-Mechanismen, um bei Ausfall eines Servers nahtlos auf einen anderen umschalten zu können."
+        ],
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie den Zweck eines Hypervisors.",
+        "musterantwort": "Ein Hypervisor, auch Virtual Machine Monitor genannt, ermöglicht es, mehrere virtuelle Maschinen auf einem einzelnen physischen Server zu erstellen und zu verwalten. Er abstrahiert die Hardware-Ressourcen und weist sie den virtuellen Maschinen zu, wodurch eine effiziente Nutzung der Hardware ermöglicht und die Isolation zwischen den virtuellen Maschinen sichergestellt wird.",
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie das Funktionsprinzip der Containerisierung.",
+        "musterantwort": "Containerisierung ist eine Methode zur Virtualisierung auf Betriebssystemebene, bei der Anwendungen zusammen mit ihren Abhängigkeiten in einem Container ausgeführt werden. Im Gegensatz zu virtuellen Maschinen, die jeweils ein eigenes Betriebssystem benötigen, teilen sich Container den Kernel des Host-Betriebssystems. Dies führt zu geringerem Ressourcenverbrauch und schnelleren Startzeiten der Anwendungen.",
+        "punkte": 5
+      },
+      {
+        "fragestellung": "Erläutern Sie die Ziele der Kryptographie: Vertraulichkeit, Integrität und Authentizität.",
+        "musterantwort": {
+          "Vertraulichkeit": "Sicherstellen, dass Informationen nur für berechtigte Personen zugänglich sind.",
+          "Integrität": "Gewährleistung, dass Informationen während der Übertragung oder Speicherung nicht verändert wurden.",
+          "Authentizität": "Bestätigung der Echtheit einer Nachricht oder eines Kommunikationspartners."
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Beschreiben Sie den Prozess der Datenwiederherstellung nach einem Ausfall mehrerer Festplatten eines RAID-Systems unter Verwendung der vorhandenen Sicherungsbänder. Geben Sie die Bandbezeichnungen in der korrekten Reihenfolge an.",
+        "musterantwort": "Für eine vollständige Wiederherstellung benötigen Sie das letzte Vollbackup (Voll) und alle darauf folgenden differenziellen (Diff.) oder inkrementellen Backups bis zum Tag des Ausfalls. Die korrekte Reihenfolge und Auswahl der Bänder hängt von den spezifischen Daten des Backups ab.",
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Erläutern Sie zwei Maßnahmen, die ergriffen werden müssen, um aus einer Datensicherung eine Archivierung zu erstellen.",
+        "musterantwort": [
+          "Langfristige Speicherlösungen wählen, die Datenverlust über Jahrzehnte hinweg minimieren.",
+          "Ein umfassendes Index- und Retrieval-System einrichten, um den schnellen Zugriff auf archivierte Daten zu ermöglichen."
+        ],
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie jeweils einen Anwendungsfall für kleinere und größere Zuordnungseinheiten beim Formatieren eines logischen Volumens auf einem RAID.",
+        "musterantwort": {
+          "Kleinere Zuordnungseinheiten": "Geeignet für Systeme, die viele kleine Dateien speichern, um Speicherplatz effizient zu nutzen.",
+          "Größere Zuordnungseinheiten": "Vorteilhaft für Systeme, die mit großen Dateien arbeiten, um die Lesegeschwindigkeit und Effizienz zu verbessern."
+        },
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie drei Vorteile der firmeninternen Verwaltung und Bereitstellung von Betriebssystem-, Anwendungs- und Treiberpatches.",
+        "musterantwort": [
+          "Kontrolle über den Zeitpunkt der Patch-Installation, um Betriebsunterbrechungen zu minimieren.",
+          "Möglichkeit, Patches vor der breiten Implementierung zu testen, um Kompatibilitätsprobleme zu vermeiden.",
+          "Anpassung von Patches an spezifische Unternehmensbedürfnisse und Sicherheitsanforderungen."
+        ],
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Erläutern Sie die Unterschiede zwischen einem Patch und einem Upgrade einer Software und wann diese zum Einsatz kommen.",
+        "musterantwort": {
+          "Patch": "Wird bereitgestellt, um spezifische Probleme oder Sicherheitslücken in einer Softwareversion zu beheben. Patches sind oft kostenlos für bestehende Nutzer.",
+          "Upgrade": "Bietet neue Funktionen oder Leistungsverbesserungen und stellt eine neue Hauptversion der Software dar. Upgrades werden in der Regel zu einem ermäßigten Preis für bestehende Nutzer angeboten."
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Beschreiben Sie zwei Gründe für die Verwendung von VLANs und die notwendigen Einstellungen, um gebäudeübergreifende VLANs zu betreiben.",
+        "musterantwort": {
+          "Gründe": [
+            "Segmentierung des Netzwerks zur Verbesserung der Sicherheit und des Verkehrsmanagements.",
+            "Reduzierung von Broadcast-Domänen, um die Netzwerkleistung zu erhöhen."
+          ],
+          "Einstellungen": "Konfiguration von Trunk-Ports auf den Switches, um VLAN-Informationen zwischen den Geräten zu übertragen."
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Erläutern Sie die Veränderung im OSI-Layer 2, die bei einer VLAN-Verbindung zwischen zwei Switches stattfindet.",
+        "musterantwort": "Bei einer VLAN-Verbindung fügen Switches Tags zu den Ethernet-Frames hinzu, die Informationen über die VLAN-Zugehörigkeit enthalten. Diese Tags ermöglichen es den Switches, den Verkehr entsprechend zu isolieren und zu leiten, auch wenn die Daten über dieselbe physische Infrastruktur übertragen werden.",
+        "punkte": 3
+      },
+      {
+        "fragestellung": "Erläutern Sie drei Aspekte, die für eine Bereitstellung von Anwendungen in Form von SaaS (Software as a Service) sprechen.",
+        "musterantwort": [
+          "Skalierbarkeit: Ermöglicht es Nutzern, Ressourcen flexibel zu skalieren, basierend auf ihrem aktuellen Bedarf.",
+          "Kosteneffizienz: Reduziert die Notwendigkeit für umfangreiche Vorabinvestitionen in Hardware und senkt die Betriebskosten.",
+          "Wartung und Updates: Werden vom Anbieter durchgeführt, was die IT-Abteilung entlastet und sicherstellt, dass alle Nutzer immer Zugang zur neuesten Softwareversion haben."
+        ],
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Erläutern Sie zwei Sachverhalte, die beim Aufbau des Server-Clusters für eine Private Cloud zu beachten sind.",
+        "musterantwort": [
+          "Hochverfügbarkeit und Failover: Wichtig, um Serviceunterbrechungen zu minimieren und die Betriebskontinuität zu gewährleisten.",
+          "Netzwerkkonfiguration und -management: Muss effizient gestaltet sein, um eine optimale Kommunikation innerhalb des Clusters und mit den Endnutzern zu ermöglichen."
+        ],
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie den Zweck eines Hypervisors in der Server-Virtualisierung.",
+        "musterantwort": "Ein Hypervisor ermöglicht es, mehrere virtuelle Maschinen auf einem einzigen physischen Server zu erstellen und zu verwalten, wobei jeder virtuellen Maschine Ressourcen zugewiesen werden. Dies trägt zur Effizienzsteigerung bei, indem Hardware-Ressourcen besser genutzt und isolierte Umgebungen für verschiedene Anwendungen bereitgestellt werden.",
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie das Funktionsprinzip der Containerisierung und wie es sich von der traditionellen Virtualisierung unterscheidet.",
+        "musterantwort": "Containerisierung ermöglicht die Isolation und das Deployment von Anwendungen zusammen mit ihren Abhängigkeiten in einem leichten, portablen Container. Im Gegensatz zur traditionellen Virtualisierung, die für jede virtuelle Maschine ein vollständiges Betriebssystem benötigt, teilen sich Container den Kernel des Host-Betriebssystems, was zu einem geringeren Ressourcenverbrauch führt.",
+        "punkte": 5
+      },
+      {
+        "fragestellung": "Berechnen Sie die jährliche Reduzierung bzw. Erhöhung der Stromkosten nach der Umstellung auf den neuen Server-Cluster, der aus vier Servern mit einer durchschnittlichen Leistungsaufnahme von jeweils 600 W besteht. Der Betrieb erfolgt 24/7, der Preis für eine Kilowattstunde beträgt 0,40 Euro, und es gibt eine monatliche Pauschale für die Nebenkosten in Höhe von 20 Euro. Vergleichen Sie das Ergebnis mit den durchschnittlichen monatlichen Stromkosten des vergangenen Jahres in Höhe von 1.359,44 Euro.",
+        "musterantwort": "Die Berechnung sollte die gesamte jährliche Energieaufnahme der neuen Server (in kWh) berücksichtigen, die Kosten pro kWh anwenden und die Nebenkosten hinzufügen. Das Ergebnis wird dann mit den ursprünglichen jährlichen Kosten verglichen, um die Differenz zu ermitteln.",
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Erläutern Sie die Hauptziele der Kryptographie: Vertraulichkeit, Integrität und Authentizität, im Kontext der strengen Datenschutzbestimmungen für das Projekt 'Alster'.",
+        "musterantwort": {
+          "Vertraulichkeit": "Sicherstellung, dass nur autorisierte Personen Zugriff auf die verschlüsselten Daten haben.",
+          "Integrität": "Gewährleistung, dass die Daten während der Speicherung oder Übertragung nicht verändert wurden.",
+          "Authentizität": "Bestätigung der Identität der Kommunikationspartner und der Echtheit der Daten."
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Nach dem Ausfall mehrerer Festplatten eines RAID-Systems und der Notwendigkeit eines neuen RAID-Systems, erläutern Sie den Prozess der Datenwiederherstellung unter Verwendung der vorhandenen Sicherungsbänder. Geben Sie die Bandbezeichnungen in der richtigen Reihenfolge für eine vollständige Wiederherstellung an.",
+        "musterantwort": "Für eine vollständige Wiederherstellung benötigt man das letzte Vollbackup vor dem Ausfall und alle darauf folgenden differenziellen oder inkrementellen Backups bis zum Ausfalltag. Die korrekte Reihenfolge der Bänder richtet sich nach den Daten des letzten vollständigen und darauf folgenden Backups.",
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Beschreiben Sie zwei Maßnahmen, die ergriffen werden müssen, um eine Datensicherung in eine Archivierung zu überführen.",
+        "musterantwort": [
+          "Langzeit-Speichermedien wählen, die eine hohe Datenintegrität über Jahre hinweg garantieren.",
+          "Ein detailliertes Verzeichnis der archivierten Inhalte erstellen, um die Auffindbarkeit und Zugänglichkeit der Daten zu gewährleisten."
+        ],
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie je einen Anwendungsfall für kleinere und größere Zuordnungseinheiten beim Formatieren eines logischen Volumens auf einem RAID.",
+        "musterantwort": {
+          "Kleinere Zuordnungseinheiten": "Geeignet für Systeme, die vorwiegend kleine Dateien speichern und verarbeiten, um Speicherplatz effizient zu nutzen und Verschwendung zu minimieren.",
+          "Größere Zuordnungseinheiten": "Vorteilhaft für Systeme, die mit großen Dateien arbeiten, da größere Zuordnungseinheiten die Verarbeitungsgeschwindigkeit und Effizienz bei der Speicherung und beim Zugriff auf große Dateien verbessern können."
+        },
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie drei Vorteile der firmeninternen Verwaltung und Bereitstellung von Betriebssystem-, Anwendungs- und Treiberpatches.",
+        "musterantwort": [
+          "Kontrolle und Sicherheit: Die Möglichkeit, Patches zu testen und zu validieren, bevor sie netzwerkweit ausgerollt werden, reduziert das Risiko von Störungen und Sicherheitsproblemen.",
+          "Anpassung: Patches können an die spezifischen Bedürfnisse und Anforderungen des Unternehmens angepasst werden.",
+          "Zeitmanagement: Die interne Verwaltung erlaubt eine planvolle Implementierung von Patches, um den Betrieb so wenig wie möglich zu beeinträchtigen."
+        ],
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Erläutern Sie die Unterschiede zwischen einem Patch und einem Upgrade einer Software und geben Sie an, wann diese jeweils zum Einsatz kommen.",
+        "musterantwort": {
+          "Patch": "Ein Patch behebt spezifische Fehler oder Sicherheitslücken in einer bestehenden Softwareversion. Patches werden in der Regel kostenlos bereitgestellt und sollten so bald wie möglich angewendet werden.",
+          "Upgrade": "Ein Upgrade liefert eine neue Version der Software mit erweiterten Funktionen, Verbesserungen und möglicherweise Fehlerkorrekturen. Upgrades können kostenpflichtig sein und kommen zum Einsatz, wenn signifikante Verbesserungen oder neue Features benötigt werden."
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Beschreiben Sie zwei Gründe für die Verwendung von VLANs und geben Sie an, welche Einstellungen auf den Switches vorgenommen werden müssen, um gebäudeübergreifende VLANs zu betreiben.",
+        "musterantwort": {
+          "Gründe": [
+            "Isolation: VLANs können verschiedene Netzwerksegmente isolieren, um die Sicherheit zu erhöhen und den Datenverkehr zu segmentieren.",
+            "Effizienz: Durch die Reduzierung von Broadcast-Domänen können VLANs die Netzwerkeffizienz verbessern."
+          ],
+          "Einstellungen": "Auf den Switches müssen Trunk-Ports konfiguriert werden, um den VLAN-Tagged Traffic zwischen den Gebäuden zu ermöglichen."
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Beschreiben Sie die Veränderung im OSI-Layer 2, die bei einer VLAN-Verbindung zwischen zwei Switches stattfindet.",
+        "musterantwort": "Bei einer VLAN-Verbindung fügen Switches den Ethernet-Frames Tags hinzu, die die VLAN-Zugehörigkeit angeben. Diese Tags ermöglichen es den Switches, den Traffic entsprechend der VLAN-ID zu isolieren und weiterzuleiten, was eine logische Trennung von Netzwerksegmenten innerhalb desselben physischen Netzwerks erlaubt.",
+        "punkte": 3
+      },
+      {
+        "fragestellung": "Erläutern Sie je einen Anwendungsfall für kleinere und größere Zuordnungseinheiten beim Formatieren eines logischen Volumens auf einem RAID. Berücksichtigen Sie die Größen 512 Byte bis 65.536 Byte.",
+        "musterantwort": {
+          "Kleinere Zuordnungseinheiten": "Systeme, die viele kleine Dateien verarbeiten, profitieren von kleineren Zuordnungseinheiten, da so der Speicherplatz effizienter genutzt wird. Weniger Speicherplatz wird verschwendet, weil die Mindestgröße einer Datei der Größe einer Zuordnungseinheit entspricht. Beispielsweise eignet sich eine Zuordnungseinheit von 512 Byte oder 1.024 Byte für Textdateien oder kleine Konfigurationsdateien.",
+          "Größere Zuordnungseinheiten": "Systeme, die große Dateien speichern und verarbeiten, wie Video- oder Datenbankserver, profitieren von größeren Zuordnungseinheiten. Eine größere Zuordnungseinheit, wie 32.768 Byte oder 65.536 Byte, kann die Performance beim Lesen und Schreiben großer Dateien verbessern, da weniger Verwaltungsaufwand für die Zuordnungseinheiten erforderlich ist und die Datenübertragung effizienter wird."
+        },
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Beschreiben Sie drei der im Text genannten Formen von Backups.",
+        "musterantwort": {
+          "Vollständiges und inkrementelles Backup": "Beginnt mit einem Backup aller Daten, gefolgt von Backups nur der neuen oder geänderten Daten. Für eine vollständige Wiederherstellung sind das letzte vollständige Backup und alle nachfolgenden inkrementellen Backups erforderlich.",
+          "Differential Backup": "Kopiert alle Daten, die sich seit dem letzten vollständigen Backup geändert haben, ohne eine Archivaufzeichnung zu führen.",
+          "Immutable Backup": "Einmal geschriebene Daten können nicht überschrieben oder gelöscht werden, was Schutz gegen Ransomware bietet."
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Ermitteln Sie in Minuten und Sekunden, wie lange der Fileserver pro Woche durch das tägliche Vollbackup blockiert wird, wenn das Datenvolumen 6,2 GByte beträgt und die Schreibgeschwindigkeit 3 MByte/Sekunde ist.",
+        "musterantwort": "Die Backupzeit für das tägliche Vollbackup beträgt etwa 35 Minuten und 16 Sekunden.",
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Ermitteln Sie die wöchentliche Sicherungszeit, wenn von Montag bis Samstag täglich 4 MByte neue Daten gespeichert und 6 MByte vorhandene Daten geändert werden. Sonntags wird ein Vollbackup durchgeführt und an den anderen Wochentagen differentielle Backups.",
+        "musterantwort": "Die Sicherungszeit für differentielle Backups beträgt insgesamt etwa 20 Sekunden pro Woche, zusätzlich zur Zeit für das Vollbackup.",
+        "punkte": 5
+      },
+      {
+        "fragestellung": "Ermitteln Sie die wöchentliche Sicherungszeit unter der Annahme, dass an den Wochentagen Montag bis Samstag durchschnittlich 4 MByte neue Daten gespeichert und 6 MByte vorhandene Daten geändert werden, und dass Sonntags ein Vollbackup, an den anderen Tagen inkrementelle Backups durchgeführt werden.",
+        "musterantwort": "Die gesamte wöchentliche Sicherungszeit für das Szenario mit inkrementellen Backups beträgt etwa die Zeit für das Vollbackup plus 20 Sekunden für die inkrementellen Backups.",
+        "punkte": 5
+      },
+      {
+        "fragestellung": "Erläutern Sie die Zwei-Faktor-Authentifizierung (2FA) und ihre Bedeutung für die Sicherheit beim Login zur Selbstausleihe in der Bücherei.",
+        "musterantwort": "Die Zwei-Faktor-Authentifizierung ist eine Sicherheitsmethode, bei der zwei verschiedene und voneinander unabhängige Komponenten für den Login-Prozess verwendet werden. Dies erhöht die Sicherheit, da ein potenzieller Angreifer beide Faktoren kompromittieren müsste, um unbefugten Zugriff zu erhalten. Typischerweise kombiniert 2FA etwas, das der Nutzer weiß (z.B. ein Passwort) mit etwas, das der Nutzer besitzt (z.B. ein Smartphone für einen SMS-Code), um die Identität zu bestätigen.",
+        "punkte": 3
+      },
+      {
+        "fragestellung": "Nennen Sie zwei Regeln zum Festlegen eines sicheren Passworts.",
+        "musterantwort": [
+          "Das Passwort sollte mindestens 12 Zeichen lang sein und eine Kombination aus Buchstaben, Zahlen und Sonderzeichen enthalten.",
+          "Vermeiden Sie offensichtliche Wortfolgen oder persönliche Informationen, die leicht zu erraten sind, und nutzen Sie stattdessen zufällige Wortkombinationen oder Passphrasen."
+        ],
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Erläutern Sie, was man unter einer 'On Premises' Lösung versteht.",
+        "musterantwort": "'On Premises' bezieht sich auf IT-Infrastrukturen, die physisch vor Ort beim Nutzer, also in den Räumlichkeiten des Unternehmens, installiert sind. Die Organisation ist vollständig für den Betrieb, die Wartung und die Sicherheit dieser Infrastrukturen verantwortlich.",
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Nennen Sie drei Nachteile einer 'On Premises' Lösung.",
+        "musterantwort": [
+          "Hohe Vorabkosten für Hardware und Infrastruktur.",
+          "Notwendigkeit, IT-Personal für Wartung und Updates bereitzustellen.",
+          "Schwierigkeiten bei der Skalierung der Infrastruktur bei wachsendem Bedarf."
+        ],
+        "punkte": 3
+      },
+      {
+        "fragestellung": "Nennen Sie zwei Merkmale zur Unterscheidung von Kundensegmenten in Bezug auf IT-Anforderungen und Skalierbarkeit.",
+        "musterantwort": {
+          "Merkmale": [
+            "Alter und technische Versiertheit: Jüngere Nutzergruppen könnten fortschrittlichere digitale Dienste erwarten, während ältere Nutzer möglicherweise mehr Unterstützung benötigen.",
+            "Spezifische Bedürfnisse: Beispielsweise benötigen Kunstliebhaber hochauflösende Bildarchive, während Studenten Wert auf Zugriff auf wissenschaftliche Publikationen legen."
+          ],
+          "Begründung": "Diese Merkmale helfen, die Dienstleistungen und Ressourcen auf die spezifischen Bedürfnisse und Präferenzen der verschiedenen Nutzergruppen abzustimmen und so die Nutzerzufriedenheit und -bindung zu erhöhen."
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Erläutern Sie den Unterschied zwischen Housing und Hosting.",
+        "musterantwort": "'Housing' bezieht sich auf das Unterbringen von Server-Hardware in einem Rechenzentrum, wobei die Hardware dem Kunden gehört und von ihm verwaltet wird. 'Hosting' hingegen ist ein Dienst, bei dem der Anbieter nicht nur den physischen Platz, sondern auch die Server-Hardware zur Verfügung stellt und oft zusätzliche Dienstleistungen wie Wartung und Backup übernimmt.",
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie, warum Patientendaten gemäß EU-DSGVO besonders behandelt werden müssen.",
+        "musterantwort": "Patientendaten sind als sensible personenbezogene Daten eingestuft, deren Verarbeitung ein hohes Risiko für die Rechte und Freiheiten der betroffenen Personen darstellt. Die EU-DSGVO fordert daher besondere Schutzmaßnahmen, um die Privatsphäre und Sicherheit dieser Daten zu gewährleisten, einschließlich strengerer Einwilligungsverfahren und erhöhter Sicherheitsvorkehrungen.",
+        "punkte": 3
+      },
+      {
+        "fragestellung": "Beschreiben Sie zwei Vorteile des Betreibens eigener Server in einer privaten Cloud (Inhouse) und zwei Vorteile der Inanspruchnahme von öffentlichen Cloud-Diensten für die Daten von Pflegediensten.",
+        "musterantwort": {
+          "Inhouse": [
+            "Volle Kontrolle über die Daten und Infrastruktur, was eine individuelle Anpassung an spezifische Sicherheits- und Compliance-Anforderungen ermöglicht.",
+            "Möglicherweise bessere Leistung für interne Nutzer, da die Daten und Anwendungen im gleichen Netzwerk gehostet werden."
+          ],
+          "Öffentliche Cloud": [
+            "Kosteneffizienz durch das Wegfallen hoher initialer Investitionen für Hardware und Infrastruktur.",
+            "Skalierbarkeit und Flexibilität, da Ressourcen nach Bedarf schnell hinzugefügt oder entfernt werden können."
+          ]
+        },
+        "punkte": 8
+      },
+      {
+        "fragestellung": "Stellen Sie die fixen und variablen Kosten der beiden Lösungen (Inhouse vs. Cloud) für das erste Jahr gegenüber und leiten Sie daraus eine Kostenentscheidung ab.",
+        "musterantwort": {
+          "Kostenvergleich": {
+            "Inhouse": {
+              "Fixe Kosten pro Jahr": "8.400 EUR (Anschaffungskosten) + 300 EUR (Stromverbrauch) + 1.200 EUR (Wartungskosten, 100 EUR monatlich)",
+              "Variable Kosten pro Jahr": "Keine zusätzlichen variablen Kosten."
+            },
+            "Cloud": {
+              "Fixe Kosten pro Jahr": "1.500 EUR (jährliche Kosten für die cloudbasierte Variante)",
+              "Variable Kosten pro Jahr": "Keine, da im jährlichen Preis enthalten."
+            }
+          },
+          "Schlussfolgerung": "Die Inhouse-Lösung verursacht im ersten Jahr höhere initiale Kosten, während die Cloud-Lösung niedrigere, vorhersehbare jährliche Kosten bietet. Die Entscheidung hängt von der langfristigen Strategie, Budgetplanung und spezifischen Anforderungen des Unternehmens ab."
+        },
+        "punkte": 8
+      },
+      {
+        "fragestellung": "Beschreiben Sie je zwei messbare Kriterien für die Verfügbarkeit und die Aufgaben, die sich aus den Verantwortlichkeiten des Leistungserbringers ergeben, gemäß einem Servicelevel-Vertrag.",
+        "musterantwort": {
+          "Verfügbarkeit": [
+            "Die Verfügbarkeit des Services sollte über 99,9% im Jahresmittel liegen.",
+            "Die Wiederherstellungszeit nach einem Ausfall sollte weniger als 4 Stunden betragen."
+          ],
+          "Verantwortlichkeiten des Leistungserbringers": [
+            "Regelmäßige Wartung und Updates, um die vereinbarte Verfügbarkeit zu gewährleisten.",
+            "Schnelle Reaktion auf Störungen und Ausfälle, einschließlich transparenter Kommunikation über den Status."
+          ]
+        },
+        "punkte": 8
+      },
+      {
+        "fragestellung": "Nennen Sie jeweils drei Vorteile für das Hosting eines Datenbankservers On Premises und in der Public Cloud.",
+        "musterantwort": {
+          "On Premises": [
+            "Volle Kontrolle über die Daten und Systeme, was die Einhaltung spezifischer Sicherheits- und Datenschutzrichtlinien erleichtert.",
+            "Bessere Leistung durch direkten Zugriff auf die Hardware, ohne Abhängigkeit von Internetverbindungen.",
+            "Anpassungsfähigkeit und Flexibilität in der Konfiguration und Skalierung der Systemressourcen nach Bedarf."
+          ],
+          "Public Cloud": [
+            "Kosteneffizienz durch das Wegfallen von Anfangsinvestitionen für physische Hardware und deren Wartung.",
+            "Einfache und schnelle Skalierbarkeit, um Ressourcen bedarfsgerecht anzupassen.",
+            "Hochverfügbarkeit und Disaster Recovery durch die verteilte Infrastruktur der Cloud-Anbieter."
+          ]
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Beschreiben Sie den Begriff der Latenz und nennen Sie zwei Beispiele, in denen eine hohe Latenz besonders negativ auf die Performance wirkt.",
+        "musterantwort": {
+          "Definition": "Latenz bezeichnet die Verzögerung, die bei der Datenübertragung über ein Netzwerk auftritt. Es ist die Zeit, die vom Sender bis zum Empfänger und zurück benötigt wird.",
+          "Beispiele": [
+            "Online-Gaming, wo eine hohe Latenz zu Verzögerungen führt, die das Spielerlebnis beeinträchtigen können.",
+            "Videokonferenzen, bei denen eine hohe Latenz zu Unterbrechungen und Verzögerungen in der Kommunikation führt."
+          ]
+        },
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Ergänzen Sie die Tabelle um drei geeignete Maßnahmen zur Erhöhung der Verfügbarkeit eines lokalen Datenbankservers, außer der Nutzung eines RAID-6-Systems.",
+        "musterantwort": {
+          "Maßnahmen": [
+            "Regelmäßige Backups auf externe Speichermedien oder in die Cloud, um Datenverlust vorzubeugen.",
+            "Einrichtung einer redundanten Stromversorgung und Netzwerkanbindung, um Ausfälle zu minimieren.",
+            "Implementierung eines Monitoring-Systems zur frühzeitigen Erkennung und Behebung von Problemen."
+          ]
+        },
+        "punkte": 6
+      },
+      {
+        "fragestellung": "Berechnen Sie den benötigten Speicherplatz für die Archivierung von 30 GiB Dokumentendaten pro Monat über zehn Jahre mit einer Komprimierungsrate von 60%.",
+        "musterantwort": "Der benötigte Speicherplatz für die Archivierung der Daten für zehn Jahre beträgt etwa 2.11 TiB, unter Berücksichtigung der Komprimierungsrate.",
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Berechnen Sie, wie lange der reservierte Speicher von 1 TiB für die Archivierung der Daten ausreicht, unter Berücksichtigung der Komprimierungsrate.",
+        "musterantwort": "Der 1 TiB Speicher reicht für etwa 4.74 Jahre, basierend auf den monatlich archivierten und komprimierten 30 GiB Daten.",
+        "punkte": 2
+      },
+      {
+        "fragestellung": "Erklären Sie die Vorteile der LTO-Technologie und des Linear Tape File Systems (LTFS) für die Datensicherung im Möbelhaus Rusticus.",
+        "musterantwort": {
+          "LTO-Technologie": "Die LTO-Technologie wird aufgrund ihrer Kosteneffizienz geschätzt, besonders für Langzeitarchivierungen. Eine Studie von ESG zeigt, dass LTO-8 Lösungen über einen Zeitraum von zehn Jahren 86% günstiger sind als Lösungen, die ausschließlich auf Festplattenspeicher basieren.",
+          "LTFS": "LTFS ermöglicht es, LTO-Bandlaufwerke ähnlich wie große Festplatten zu nutzen, wobei Dateien einfach per Drag-and-Drop verschoben werden können. Dies vereinfacht die Handhabung von großen Datenmengen für Transport und Archivierung erheblich und bietet eine kosteneffektive Alternative zu traditionellen Tape-Recovery-Lösungen."
+        },
+        "punkte": 4
+      },
+      {
+        "fragestellung": "Erläutern Sie die genannten Backupverfahren (Vollbackup, differentielles Backup, inkrementelles Backup, Klonen) unter Berücksichtigung des benötigten Speichervolumens und der Auswirkungen auf das Archivbit.",
+        "musterantwort": {
+          "Vollbackup": "Sichert alle ausgewählten Daten und setzt das Archivbit zurück. Benötigt am meisten Speicherplatz, aber die Wiederherstellung ist am einfachsten.",
+          "Differentielles Backup": "Sichert alle Daten, die seit dem letzten Vollbackup geändert wurden, ohne das Archivbit zurückzusetzen. Benötigt weniger Speicherplatz als ein Vollbackup und erleichtert die Wiederherstellung im Vergleich zu inkrementellen Backups.",
+          "Inkrementelles Backup": "Sichert nur die Daten, die seit dem letzten Backup (egal welcher Art) geändert wurden, und setzt das Archivbit zurück. Minimiert den benötigten Speicherplatz, macht die Wiederherstellung jedoch komplexer, da alle vorherigen inkrementellen Backups und das letzte Vollbackup benötigt werden.",
+          "Klonen": "Erstellt eine exakte Kopie der Daten auf einem anderen Datenträger. Wird oft für Systemmigrationen genutzt und erfordert so viel Speicherplatz wie die Originaldaten."
+        },
+        "punkte": 10
+      },
+      {
+        "fragestellung": "Nach einem Festplattenausfall im Möbelhaus Rusticus: Nennen Sie die Bandbezeichnungen der Bänder in der richtigen Reihenfolge, die für eine vollständige Wiederherstellung der Daten erforderlich sind, unter Berücksichtigung der fehlerhaften Konfiguration des Datensicherungsprogramms.",
+        "musterantwort": "Für eine vollständige Wiederherstellung der Daten sind das letzte Vollbackup (V2) und alle nachfolgenden inkrementellen Backups bis zum Ausfalltag erforderlich. Da die Sicherung vom Mittwoch fälschlicherweise als inkrementell statt differentiell durchgeführt wurde, müssen die Bänder V2, 01, 02, 03 (fälschlicherweise als inkrementell gekennzeichnet, tatsächlich aber differentiell), 04, 05 und 06 in dieser Reihenfolge verwendet werden."
+      },
+      {
+        "fragestellung": "Ordnen Sie die gegebenen technisch-organisatorischen Maßnahmen (TOM) den Kontrollarten Zugangskontrolle und Zugriffskontrolle zu.",
+        "musterantwort": {
+          "Zugangskontrolle": [
+            "Alarmanlagen",
+            "Chipkarten für verschlossene Bereiche",
+            "Besucheranmeldung am Empfang"
+          ],
+          "Zugriffskontrolle": [
+            "Passwortregeln",
+            "Verschlüsselung von Datenträgern",
+            "Generierung von Benutzerprofilen"
+          ],
+          "Beide": [
+            "Datenschutzkonforme Vernichtung von Datenträgern"
+          ]
+        },
+        "punkte": 5
+      }
+
+    ]
+  }
+  

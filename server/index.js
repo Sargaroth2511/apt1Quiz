@@ -71,7 +71,39 @@ const getRandomElementsFromArray = (num, arr) => {
   return result;
 };
 
-app.get("/json", (req, res) => {
+const getElementByIndex = (index, arr) => {
+  if (index <= 0 || index >= arr.length) {
+    return [];
+  }
+
+  return arr[index];
+};
+
+app.get("/realQuestions/", (req, res) => {
+  const questionNumber = req.query.questionNumber;
+
+  fs.readFile("server/realQuestionsIndexed.json", "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading data.json:", err);
+      res.status(500).json({ error: "An error occurred on the server." });
+    } else {
+      try {
+        const jsonData = JSON.parse(data);
+        console.log(jsonData["aufgaben"][questionNumber]);
+        res.json(jsonData["aufgaben"][questionNumber]);
+        // const questions = jsonData[aufgaben];
+        // res.json(questions[questionNumber]);
+      }
+      catch (parseError) {
+        console.error("Error parsing JSON data:", parseError);
+        res.status(500).json({ error: "An error occurred on the server." });
+      }
+    }    
+  });  
+});
+
+
+app.get("/quizlet", (req, res) => {
   const questionNumber = req.query.questionNumber;
   const learningField = req.query.learningField;
   // Read the JSON file

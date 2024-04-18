@@ -1,0 +1,162 @@
+[33mcommit 783632813c9a12eb8e3616fd4fabf56e01939d62[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Thu Feb 1 08:56:51 2024 +0100
+
+    synched to heroku
+
+[33mcommit 34654e9d2eca81f44a76dc99b751ada112cb8efb[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Thu Feb 1 08:54:21 2024 +0100
+
+    synched to heroku
+
+[33mcommit 7daa742becaf722afa671b5567660484cb284ed7[m
+Merge: 4dbc16c 6c30fa7
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Wed Jan 31 20:45:44 2024 +0100
+
+    synched to heroku
+
+[33mcommit 4dbc16c696bcaebab51b155f856c902fe23a8dfa[m[33m ([m[1;31mheroku/master[m[33m)[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Wed Jan 31 14:41:11 2024 +0100
+
+    updated
+
+[33mcommit 806adf6b5462fecc53d2cf3ea35b84ae9fc061eb[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Fri Dec 1 14:13:07 2023 +0100
+
+    Firebase Auth Added
+
+[33mcommit 5f7c316ab72f3a67e2e3c6746fe714994928e209[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Wed Oct 18 21:21:32 2023 +0200
+
+    GPT is now a sarcastic Bastard
+
+[33mcommit 5d726e81b685c05443e6b5494bce1e8af1863e68[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Thu Oct 12 14:54:48 2023 +0200
+
+    GPT advice finetuned
+
+[33mcommit 137bf6de2fe3c056dfa5dc1df212d36276e52b11[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Thu Oct 12 14:27:50 2023 +0200
+
+    GPT response type changed to json
+
+[33mcommit 1aa140b0ae0acb470abdd6b606e052d1094041c1[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Thu Oct 12 12:01:18 2023 +0200
+
+    Styles Changed
+
+[33mcommit 16d332276261712b9353867896b6f96c349f4e17[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Thu Oct 12 11:27:36 2023 +0200
+
+    Changed ChatGPT behaviour in System Role
+
+[33mcommit 22a4a9ca260d1ac593182f2c8a2844ca9a4a2dd7[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Wed Oct 11 14:47:39 2023 +0200
+
+    Basic Structure of GPT Communication added
+
+[33mcommit b7397c13492f5d766bb417ac014e725a498b1826[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Fri Oct 6 22:01:15 2023 +0200
+
+    Dev Environment changed and Error handling added
+
+[33mcommit cac13c7833c409f221c084ec4bd2c4ecc125e17f[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Fri Oct 6 17:56:05 2023 +0200
+
+    Testing ChatGPT
+
+[33mcommit f19273090e9f55b055ed9e1605992f1cb178f13f[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Fri Oct 6 16:57:12 2023 +0200
+
+    Testing ChatGPT
+
+[33mcommit f06924aa300b4b18cf97fadccf15cfbab7964222[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Fri Oct 6 16:46:07 2023 +0200
+
+    Testing ChatGPT
+
+[33mcommit 003c507267fa93e0baf7756e4981ad1a106182c1[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Fri Oct 6 16:41:25 2023 +0200
+
+    Testing ChatGPT
+
+[33mcommit 3bf17070090e9bab38cecd1172d51badbff94e5f[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Fri Oct 6 16:33:03 2023 +0200
+
+    Testing ChatGPT
+
+[33mcommit a7936abde65d71d3c28924bda88e0a9e6ef13d04[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Fri Oct 6 16:20:54 2023 +0200
+
+    Connection to OpenAI added
+
+[33mcommit 48b1e46f9f24ec53b7c273c1d6660beb8a80b2ac[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Fri Oct 6 16:07:54 2023 +0200
+
+    Connection to OpenAI added
+
+[33mcommit 9c0ca9c7c2d4300d42c9f0c906c2a0bb30d387e1[m
+Author: Sargaroth2511 <84723008+Sargaroth2511@users.noreply.github.com>
+Date:   Fri Oct 6 15:47:07 2023 +0200
+
+    First commit
+
+[33mcommit 6c30fa71d3c0d055c7ec05528395cb2d4a3f8092[m
+Author: unknown <IT-User@LM00-VITA102-07.CL1C.daa>
+Date:   Fri Sep 29 13:06:19 2023 +0200
+
+    Basic GPT functionality added
+
+[33mcommit f6739b4b5e2d3c31bdf2b1d482361a60f9d25f3a[m
+Author: unknown <IT-User@LM00-VITA102-07.CL1C.daa>
+Date:   Fri Sep 29 11:31:52 2023 +0200
+
+    converted csv to json
+
+[33mcommit 236f007a2b3a879ae2ee8de3940aee07d670da6f[m
+Author: unknown <IT-User@LM00-VITA102-07.CL1C.daa>
+Date:   Wed Sep 27 13:53:14 2023 +0200
+
+    Browser Router and TestGPT Page added
+
+[33mcommit f0955ff73e2cd591668e70c9bf49a29f66f3c705[m
+Author: unknown <IT-User@LM00-VITA102-07.CL1C.daa>
+Date:   Wed Sep 27 12:02:54 2023 +0200
+
+    Local Server and request added
+
+[33mcommit 51114dcf538953e415e8293040b25a64acffe5ea[m
+Author: unknown <IT-User@LM00-VITA102-07.CL1C.daa>
+Date:   Tue Sep 26 11:08:29 2023 +0200
+
+    Api Call
+
+[33mcommit 69c627e6d0c8059044f7be2b46e152c227639a0a[m
+Author: unknown <IT-User@LM00-VITA102-07.CL1C.daa>
+Date:   Mon Sep 25 14:16:11 2023 +0200
+
+    First Commit
+
+[33mcommit 5b4e625b21b21b3916ea261d1c94a82789f67c3e[m
+Author: unknown <IT-User@LM00-VITA102-07.CL1C.daa>
+Date:   Tue Sep 12 09:08:34 2023 +0200
+
+    Initialize project using Create React App

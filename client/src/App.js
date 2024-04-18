@@ -71,7 +71,7 @@ function App() {
 
   useEffect(() => {
     const learningField = "LF1";
-    const backendUrl = `/json?questionNumber=${encodeURIComponent(
+    const backendUrl = `/quizlet?questionNumber=${encodeURIComponent(
       questionNumber
     )}&learningField=${encodeURIComponent(learningField)}`;
 
@@ -108,6 +108,22 @@ function App() {
     ) {
       setQuestionIndex(questionIndex => (questionIndex += 1));
     }
+  };
+
+  const testAPI = () => { 
+    const questionNumber = 0;
+    const backendUrl = `/realQuestions?questionNumber=${encodeURIComponent(
+      questionNumber
+    )}`;
+
+    fetch(backendUrl)
+      .then(res => {
+        if (!res.ok) {
+          setError(`Request failed with status ${res.status}`);
+          throw new Error(`Request failed with status ${res.status}`);
+        }
+        res.json().then(data => console.log(data));
+      })
   };
 
   return (
@@ -202,6 +218,7 @@ function App() {
             )}
           </div>
           {error ? <p>Irgendetwas ist schief gelaufen...</p> : ""}
+          <button onClick={testAPI}>Test API</button>
         </div>
       </div>
     </div>
