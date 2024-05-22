@@ -112,7 +112,7 @@ function App() {
 
   const testAPI = () => { 
     const questionNumber = 0;
-    const backendUrl = `/realQuestions?questionNumber=${encodeURIComponent(
+    const backendUrl = `/ihkQuestions?questionNumber=${encodeURIComponent(
       questionNumber
     )}`;
 

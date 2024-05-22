@@ -6,7 +6,7 @@ const fs = require("fs");
 const connectFirebase = require("./connectFirebase");
 
 const PORT = process.env.PORT || 3001;
-const apiKey = process.env.MY_OPENAI_KEY;
+const apiKey = process.env.CHATGPT_API_KEY;
 
 const app = express();
 app.use(express.json());
@@ -14,7 +14,7 @@ app.use(express.json());
 // Have Node serve the files for our built React app
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
-app.post("/api", (req, res) => {
+app.post("/api/chatGPT", (req, res) => {
   const { userAnswer, systemContent, correctAnswer, question, advices } =
     req.body;
 
@@ -79,7 +79,7 @@ const getElementByIndex = (index, arr) => {
   return arr[index];
 };
 
-app.get("/realQuestions/", (req, res) => {
+app.get("/ihkQuestions/", (req, res) => {
   const questionNumber = req.query.questionNumber;
 
   fs.readFile("server/realQuestionsIndexed.json", "utf8", (err, data) => {
