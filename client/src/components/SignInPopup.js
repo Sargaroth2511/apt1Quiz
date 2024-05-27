@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-import signInWithEmail from "./firebase/signInWithEmail";
+import signInWithEmail from "../Services/firebase/signInWithEmail";
 
 const SignInPopup = ({ setError, setShowCreateUserPopup, setSignIn }) => {
   const [email, setEmail] = useState("");

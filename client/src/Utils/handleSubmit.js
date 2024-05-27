@@ -1,4 +1,4 @@
-import createUserWithEmail from "../firebase/createUserWithEmail";
+import createUserWithEmail from "../Services/firebase/createUserWithEmail";
 
 const handleSubmit = (e, setError, mail, password, repeatPassword) => {
   let type = e.type === "submit";

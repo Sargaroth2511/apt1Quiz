@@ -33,3 +33,5 @@ const fetchGPTData = async (correctAnswer, question, userAnswer) => {
 };
 
 export default fetchGPTData;
+
+

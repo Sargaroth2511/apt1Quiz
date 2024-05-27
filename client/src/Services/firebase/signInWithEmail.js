@@ -1,7 +1,7 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import initializeFirebase from "./initializeFirebase";
 
-import preventSubmitDefault from "../helpers/preventSubmitDefault";
+import preventSubmitDefault from "../../Utils/preventSubmitDefault";
 
 const firebaseApp = initializeFirebase();
 const auth = getAuth(firebaseApp);

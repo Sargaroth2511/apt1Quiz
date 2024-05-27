@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react";
-// import { getAuth, onAuthStateChanged } from "firebase/auth";
-import logo from "./logo.png";
 import "./App.css";
-import fetchGPTData from "./components/apiCalls/fetchGPTData";
-// import initializeFirebase from "./components/firebase/initializeFirebase";
-import authListener from "./components/firebase/authListener";
-import logOut from "./components/firebase/logOut";
-// import SignInWithEmail from "./components/firebase/SignInWithEmail";
+import fetchGPTData from "./Services/apiCalls/fetchGPTData";
+import authListener from "./Services/firebase/authListener";
+import logOut from "./Services/firebase/logOut";
 import SignInPopup from "./components/SignInPopup";
-import logIn from "./components/firebase/logIn";
+import logIn from "./Services/firebase/logIn";
 import CreateUserPopup from "./components/CreateUserPopup";
 
 function App() {
@@ -18,7 +14,6 @@ function App() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [quizData, setQuizdata] = useState(null);
-  const [showCorrectAnswer, setShowCorrectAnswer] = useState(false);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [signIn, setSignIn] = useState(null);
   const [showCreateUserPopup, setShowCreateUserPopup] = useState(false);
@@ -36,14 +31,12 @@ function App() {
       e.preventDefault();
     }
     setSendAnswer(true);
-    setShowCorrectAnswer(true);
   };
 
   const handleKeyPress = event => {
     if (event.key === "Enter") {
       event.preventDefault();
       setSendAnswer(true);
-      setShowCorrectAnswer(true);
     }
   };
 
@@ -67,7 +60,7 @@ function App() {
       alert("Du muss eingeloggt sein um die Funktion nutzen zu können");
       setSendAnswer(false);
     }
-  }, [sendAnswer, currentUser]);
+  }, [sendAnswer, currentUser, questionIndex, userAnswer, quizData]);
 
   useEffect(() => {
     const learningField = "LF1";
@@ -90,12 +83,11 @@ function App() {
         console.error("An error occurred:", error.message);
         setError(true);
       });
-  }, []);
+  }, [questionNumber]);
 
   useEffect(() => {
     setUserAnswer("");
     setSendAnswer(false);
-    setShowCorrectAnswer(false);
     setGptData(null);
   }, [questionIndex]);
 
@@ -145,9 +137,6 @@ function App() {
       ) : (
         ""
       )}
-      <div className="logo-container">
-        <img src={logo} className="App-logo" alt="logo" />
-      </div>
       <div className="App">
         <div>
           <button onClick={() => logIn(currentUser, setSignIn)}>

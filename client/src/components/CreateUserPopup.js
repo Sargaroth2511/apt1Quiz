@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-import handleSubmit from "./helpers/handleSubmit";
+import handleSubmit from "../Utils/handleSubmit";
 
 const CreateUserPopup = ({ setError, setShowCreateUserPopup }) => {
   const [username, setUsername] = useState("");
